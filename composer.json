@@ -4,8 +4,7 @@
 	},
 "autoload": {
 		"psr-4": {
-			"Logger\\": "./Classes/",
-			"DbLogger\\": "./Classes/"
+			"Logger\\": "./Classes/"
 		},
 		"files": ["Functions/dbconnect.php"]
 	}

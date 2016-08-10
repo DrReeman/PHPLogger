@@ -7,6 +7,12 @@ use DateTime;
 
 abstract class Logger extends AbstractLogger implements LoggerInterface{
 	
+	public static function init($loggerName)
+	{
+		$loggerName = "Logger\\".$loggerName;
+		return $loggerName::getInstance();
+	}
+	
 	abstract function log($level, $message, array $context = []);
 	
 	public function getDate()

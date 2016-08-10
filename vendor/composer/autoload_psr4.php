@@ -7,5 +7,4 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Logger\\' => array($baseDir . '/Classes'),
-    'DbLogger\\' => array($baseDir . '/Classes'),
 );

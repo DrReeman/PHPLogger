@@ -15,18 +15,10 @@ class ComposerStaticInitff2ad8afa8271de5035f78960a85b1cf
         array (
             'Logger\\' => 7,
         ),
-        'D' => 
-        array (
-            'DbLogger\\' => 9,
-        ),
     );
 
     public static $prefixDirsPsr4 = array (
         'Logger\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/Classes',
-        ),
-        'DbLogger\\' => 
         array (
             0 => __DIR__ . '/../..' . '/Classes',
         ),

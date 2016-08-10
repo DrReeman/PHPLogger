@@ -5,10 +5,30 @@ namespace Logger;
 class FileLogger extends Logger 
 {
 	private $path;
+	protected static $instance;
 	
-	public function __construct($way)
+	static public function getInstance() 
+	{
+		if(is_null(self::$instance)){
+			self::$instance = new self();
+		}
+		return self::$instance;
+	}
+	
+	private function __construct(){}
+	
+	private function __clone(){}
+	
+	private function __wakeup(){}
+	
+	public function setPath($way = 'default.log')
 	{
 		$this->path = $way;
+	}
+	
+	public function unsetPath()
+	{
+		unset($this->path);
 	}
 
 	public function log($level, $message, array $context = [])

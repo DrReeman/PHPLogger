@@ -1,38 +1,24 @@
 <?php
 
 	include './vendor/autoload.php';
-	$connection = connect();
+	use Logger\Logger as Logger;
+	
+	$connection = new DBConnection('', ''); 	/*В качестве параметров конструктора
+																необходимо указать логин и пароль пользователя БД*/
+	$path = 'default.log';
 	
 	$justMessage = 'Test';
-	$messageArray = array('test1', 'test2', 'test3');
-	$messAssocArray = array('FirstElement'=>'test1', 'SecondElement'=>'test2', 'ThirdElement'=>'test3');
+	//$messageArray = array('test1', 'test2', 'test3');
+	//$messAssocArray = array('FirstElement'=>'test1', 'SecondElement'=>'test2', 'ThirdElement'=>'test3');
 	
-	class Exemple {
-		public $var1 = "12";
-		public function __toString()
-		{
-			return $this->var1;
-		}
-	}
-	
-	$objEx = new Exemple();
-	
-	$Obj1 = new Logger\DbLogger($connection);
+	$Obj1 = Logger::init('DbLogger');
+	$Obj1->setConnection($connection);
 	$Obj1->info($justMessage);
-	$Obj1->info($messageArray);
-	$Obj1->info($messAssocArray);
-	$Obj1->info($objEx);
 	
-	$way = 'testLog.txt';
-	$Obj2 = new Logger\FileLogger($way);
+	$Obj2 = Logger::init('FileLogger');
+	$Obj2->setPath($path);
 	$Obj2->info($justMessage);
-	$Obj2->info($messageArray);
-	$Obj2->info($messAssocArray);
-	$Obj2->info($objEx);
 	
-	$Obj3 = new Logger\STDOutLogger();
+	$Obj3 = Logger::init('STDOutLogger');
 	$Obj3->info($justMessage);
-	$Obj3->info($messageArray);
-	$Obj3->info($messAssocArray);
-	$Obj3->info($objEx);
-	
+	//Помимо info() доступны другие методы протоколирования интерфейса Psr\Log\LoggerInterface

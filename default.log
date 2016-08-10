@@ -1,0 +1,12 @@
+{"date":"2016-08-10 21:18:49","level":"info","message":"Test","context":"NULL"}
+{"date":"2016-08-10 21:18:49","level":"info","message":["test1","test2","test3"],"context":"NULL"}
+{"date":"2016-08-10 21:18:49","level":"info","message":{"FirstElement":"test1","SecondElement":"test2","ThirdElement":"test3"},"context":"NULL"}
+{"date":"2016-08-10 21:18:49","level":"info","message":{"var1":"12"},"context":"NULL"}
+{"date":"2016-08-10 21:22:21","level":"info","message":"Test","context":"NULL"}
+{"date":"2016-08-10 21:22:21","level":"info","message":["test1","test2","test3"],"context":"NULL"}
+{"date":"2016-08-10 21:22:21","level":"info","message":{"FirstElement":"test1","SecondElement":"test2","ThirdElement":"test3"},"context":"NULL"}
+{"date":"2016-08-10 21:22:21","level":"info","message":{"var1":"12"},"context":"NULL"}
+{"date":"2016-08-10 22:11:02","level":"info","message":"Test","context":"NULL"}
+{"date":"2016-08-10 22:11:02","level":"info","message":["test1","test2","test3"],"context":"NULL"}
+{"date":"2016-08-10 22:11:02","level":"info","message":{"FirstElement":"test1","SecondElement":"test2","ThirdElement":"test3"},"context":"NULL"}
+{"date":"2016-08-10 22:11:02","level":"info","message":{"var1":"12"},"context":"NULL"}

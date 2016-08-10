@@ -1,18 +1,22 @@
 <?php
-		function connect(){
+class DBConnection extends PDO{
+	
+	private $DB_HOST = 'localhost';
+	private $DB_NAME = 'LoggerDB';
+	private $DB_USER;
+	private $DB_PASS;
+	
+	function __construct($dbUser, $dbPass)
+	{
+		$this->DB_USER = $dbUser;
+		$this->DB_PASS = $dbPass;
 			
-			$dbHost = 'localhost';
-			$dbName = 'LoggerDB';
-			$dbUser = 'root';
-			$dbPass = 'reeman19940709=333';
+		try {
+			parent::__construct("mysql:host=$this->DB_HOST;dbname=$this->DB_NAME", $this->DB_USER, $this->DB_PASS);
 			
-			try {
-				$dbh = new \pdo("mysql:host=$dbHost;dbname=$dbName", $dbUser, $dbPass);
-				
-			} catch (\pdoexception $e) {
-				echo "database error: " . $e->getmessage();
-				die();
-			}
-			return $dbh;
+		} catch (\pdoexception $e) {
+			echo "database error: " . $e->getmessage();
+			die();
 		}
-?>
+	}
+}
